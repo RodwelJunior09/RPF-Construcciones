@@ -1,0 +1,8 @@
+input {
+    border-radius: 5px;
+    background-color: gray;
+}
+
+.input-container {
+    display: block;
+}
