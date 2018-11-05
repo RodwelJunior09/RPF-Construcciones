@@ -3,7 +3,7 @@ from .project_register_form import RegisterForm
 from . import Project_Home_Page
 
 app = Flask(__name__)
-app.secret_key = "development_key"
+app.secret_key = ""
 
 @Project_Home_Page.route("/")
 def return_home_page():
