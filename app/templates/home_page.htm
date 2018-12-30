@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <title>Pagina de Inicio</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="title-container"><h1>Home Page</h1></div>
+            <div class="search-container">
+                <h2>Introduzca el nombre del projecto para realizar la busqueda:</h2>
+                <input type="text" name="search" id="search_project_name" size="50">
+                <a href="{{ url_for('adding_project') }}"><button>Crea un nuevo projecto</button></a>
+            </div>
+        </div><br>
+
+        {% if projects %}
+        <div class="row table-section">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID of Project</th>
+                        <th scope="col">Name of Project</th>
+                        <th scope="col">Owner of Project</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for project in projects %}
+                    <tr>
+                        <th scope="row">{{project.id}}</th>
+                        <td>{{project.name_project}}</td>
+                        <td>{{project.project_owner}}</td>
+                        <td class="actions-icons">
+                            <a href="{{ url_for('edit_project', project_id=project.id) }}" aria-placeholder="Editar el projecto"><i class="fa fa-edit"></i></a>
+                            <a href="" aria-placeholder="Borrar el projecto"><i class="fa fa-trash"></i></a>
+                            <a href="{{ url_for('add_employees') }}" aria-placeholder="Introduzca el empleado"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

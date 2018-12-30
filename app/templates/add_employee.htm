@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <title>Empleados a proyecto</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Introduzca los datos para agregar al empleado en obra:</h1>
+            <div class="form-container row">
+                <form action="" method="POST" class="form-horizontal">
+                    {{ form.hidden_tag() }}
+                    <div class="row input-section">
+                        <div class="form-group">
+                            <label for="" class="control-label col-sm-2">Nombre del Empleado:</label>
+                            <div class="col-sm-10">
+                                {{ form.name_employee(class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-sm-2">Tipo de trabajo:</label>
+                            <div class="col-sm-10">
+                                {{ form.work_type_of_employee(class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-sm-2">Dias en lo cual trabajo el empleado:</label>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Lunes:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="lunes-checkbox" value="lunes">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Martes:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="martes-checkbox" value="martes">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Miercoles:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="miercoles-checkbox" value="miercoles">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Jueves:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="jueves-checkbox" value="jueves">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Viernes:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="viernes-checkbox" value="viernes">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Sabado:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="sabado-checkbox" value="sabado">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label for="" class="control-label col-sm-2">Domingo:</label>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="days" id="domingo-checkbox" value="domingo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-sm-2">Cantidad de horas extras:</label>
+                            <div class="col-sm-10">
+                                {{ form.extra_hours(class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-sm-2">Pago por dia del empleado (Journal):</label>
+                            <div class="col-sm-10">
+                                {{ form.pay_for_days(class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                {{ form.submit_info(class_="btn btn-default") }}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+user=postgres
+password=linkinpark09
+server=localhost
+port=5001
+dbname=NominaRPFDatabase
